@@ -43,3 +43,17 @@ Expected Output: ailqu
 Test: "It will take words starting with consonants and add "ay" to the end."
 Code: string("thrash")
 Expected Output: ashthray
+
+Test: "It should identify multiple words."
+Code: string("hello there Alex")
+Expected Output: ellohay erethay lexway
+
+Rough idea: 
+1st check characters
+2nd Check for Q
+  if Q, push subword + quay to finalArray
+3rd check for vowel
+  if vowel, push word + way to finalArray
+4th check consonant
+  if consonant, push subword + consonants + ay to finalArray
+5th return finalArray.join(" ")
