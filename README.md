@@ -28,6 +28,10 @@ Test: "If word doesn't start with vowel, identify all starting consonants"
 Code: string("thrash");
 Expected Output: thr
 
+Test: "If word doesn't start with vowel, remove starting consonants."
+Code: string("thrash")
+Expected Output: ash
+
 Test:"If word doesn't start with vowel, take starting consonants and tag to the end of the word"
 Code: string("thrash")
 Expected Output: ashthr

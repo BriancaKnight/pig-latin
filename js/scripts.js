@@ -4,18 +4,37 @@ function firstLetterCheck(aString) {
   } else {
     let lowerString = aString.toLowerCase();
     let firstLetter = lowerString.slice(0, 1);
+
     if (vowelStart(firstLetter)) {
       console.log(lowerString.concat("way"));
     } else {
-      
+      let result = getConsonants(lowerString);
+      let consLatin = (result.remainder + result.consonants + "ay");
+      console.log(consLatin);
     }
     startWithQ(firstLetter);
     console.log(firstLetter);
   }
 }
 
+function getConsonants(lowerString) {
+  let letterArray = lowerString.split("");
+  let storeConsonant = [];
+  for (let i = 0; i < letterArray.length; i++) {
+    if (letterArray[i] !== "a" && letterArray[i] !== "e" && letterArray[i] !== "i" && letterArray[i] !== "o" && letterArray[i] !== "u") {
+      storeConsonant.push(letterArray[i]);
+    } else {
+      remainingString = lowerString.substring(i);
+      break;
+    }
+  } return {
+    consonants: storeConsonant.join(""),
+    remainder: remainingString
+  };
+}
+
 const vowels = ["a", "e", "i", "o", "u"];
-function vowelStart(firstLetter){
+function vowelStart(firstLetter) {
   if (firstLetter === "a" || firstLetter === "e" || firstLetter === "i" || firstLetter === "o" || firstLetter === "u") {
     return true;
     console.log("Starts with a vowel.");
