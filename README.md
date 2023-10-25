@@ -32,10 +32,14 @@ Test: "If word doesn't start with vowel, remove starting consonants."
 Code: string("thrash")
 Expected Output: ash
 
-Test:"If word doesn't start with vowel, take starting consonants and tag to the end of the word"
+Test: "If word doesn't start with vowel, take starting consonants and tag to the end of the word"
 Code: string("thrash")
 Expected Output: ashthr
 
-Test:"It will take words starting with consonants and add "ay" to the end."
+Test: "If a word starts with "qu", both letters are moved to the end of the word."
+Code: string("quail")
+Expected Output: ailqu
+
+Test: "It will take words starting with consonants and add "ay" to the end."
 Code: string("thrash")
 Expected Output: ashthray

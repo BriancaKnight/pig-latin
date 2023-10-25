@@ -4,7 +4,11 @@ function firstLetterCheck(aString) {
   } else {
     let lowerString = aString.toLowerCase();
     let firstLetter = lowerString.slice(0, 1);
-
+    if (startWithQ(firstLetter)) {
+      qNewWord = qWord(lowerString);
+      console.log(qNewWord);
+    }
+    
     if (vowelStart(firstLetter)) {
       console.log(lowerString.concat("way"));
     } else {
@@ -12,7 +16,7 @@ function firstLetterCheck(aString) {
       let consLatin = (result.remainder + result.consonants + "ay");
       console.log(consLatin);
     }
-    startWithQ(firstLetter);
+    
     console.log(firstLetter);
   }
 }
@@ -24,7 +28,7 @@ function getConsonants(lowerString) {
     if (letterArray[i] !== "a" && letterArray[i] !== "e" && letterArray[i] !== "i" && letterArray[i] !== "o" && letterArray[i] !== "u") {
       storeConsonant.push(letterArray[i]);
     } else {
-      remainingString = lowerString.substring(i);
+      remainingString = lowerString.slice(i);
       break;
     }
   } return {
@@ -50,8 +54,12 @@ function onlyLetters(aString) {
 
 function startWithQ(firstLetter) {
   if (firstLetter === "q") {
-    console.log("Starts with a Q");
+    return true;
   } else {
-    console.log("does not start with a Q");
+    return false; 
   }
+}
+
+function qWord(lowerString) {
+  return lowerString.slice(2) + "quay";
 }
